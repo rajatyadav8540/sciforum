@@ -2,7 +2,80 @@
 {%load static%}
 {%block title%}Science Forum-home{%endblock%}
 {%block content%}
+<div class="container-fluid eventbg text-light">
+    <h3 class="py-5 text-center">“The Science of Today is the Technology of Tomorrow.”</h3>
+</div>
+<div class="container">
+    <h1 class="font-weight-bold text-center">Events</h1>
 
-<h1>{{}}</h1>
+    <p class=" text-justify">
+        As we look back to our ancient times we see so much development in the world. From Big Bang
+to our daily activities, everything involves science. Its blessings are everything that fills our life
+with all comforts that were unimaginable even a few years ago. Moreover, Science has
+demonstrated that it is a supreme mechanism to explain the world, to solve problems and to
+fulfil human needs. A fundamental condition is its dynamic nature: the constant revision and
+re-evaluation of the existing knowledge. Every scientific theory is always under scrutiny and
+questioned whenever new evidence seems to challenge its validity. No other knowledge system
+has demonstrated this capacity, and even, the defenders of faith-based systems are common
+users of medical services and technological facilities that have emerged from scientific
+knowledge.
+In other words, Science is one of the most important channels of knowledge. It has a specific
+role, as well as a variety of functions for the benefit of our society: creating new knowledge,
+improving education, and increasing the quality of our lives. Accordingly, we must realize the
+favours that science has provided us and must always preach in using science in every
+excellent and efficient way possible.
+The Science Forum of Hindu College is a group of inspired students and devoted faculty
+members to facilitate open dialogue between the science departments of the college.
+Acknowledging the interdisciplinary nature of research, such a conversion becomes crucial.
+To inculcate a scientific temperament among students, and to effectively bring out science
+outside the classroom, we have planned and organized popular science events which have
+seen good participation in the past.The society conducts a variety of activities throughout the
+year.
+    </p>
+</div>
+<div class="container">
+    {%for event in events%}
 
+        <div class="row cards ">
+            
+            <div class="card-body">
+               <div class="row">
+                <div class="col-sm-6">
+                    <h2 class="">{{event.event_name}}</h2>
+                    <p class="text-justify">{{event.event_content}}</p>
+                </div>
+                <div class="col-sm-6 shadow">
+                    <div id="carouselId" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselId" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselId" data-slide-to="1"></li>
+                            <li data-target="#carouselId" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active">
+                                <img src="{{event.event_image}}" alt="First slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{{event.event_image}}" alt="Second slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{{event.event_image}}" alt="Third slide">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselId" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselId" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+    {%endfor%}
+</div>
 {%endblock%}

@@ -3,27 +3,71 @@
 {%block title%}Science Forum-home{%endblock%}
 {%block content%}
 
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="card shadow-lg">
-                       <img src="/static/img/presentation.svg" alt="" class="img-fluid">
+<div class="container mt-5">
+    <div class="row d-flex">
+        <div class="col-sm-9 my-2">
+            <div class="card" style="">
+                <img class="card-img-top" src="{{blists.0.thumbnail}}" alt="Card image">
+                <div class="card-body border">
+                  <h4 class="card-title">{{blists.0.blog_title}}</h4>
+                  <p class="card-text">{{blists.0.blog_content|truncatewords:50}}</p>
+                  <a href="/blogs/blogpost/{{blists.0.blog_title}}" class="btn btn-primary">See More</a>
+                </div>
+                <div class="card-footer">
+                    {{blists.0.blog_writer}}|{{blists.0.blog_date}}
                 </div>
             </div>
-            <div class="col-sm-6">
-                <div class="row">
-                    <div class="card shadow-lg">                       
-                        <img src="/static/img/presentation.svg" alt="" class="img-fluid">
-
+        </div>
+        <div class="col-sm-3">
+            <div class="row my-2">
+                <div class="card" style="">
+                    <img class="card-img-top" src="{{blists.1.thumbnail}}" alt="Card image">
+                    <div class="card-body">
+                      <h4 class="card-title">{{blists.1.blog_title}}</h4>
+                      <p class="card-text">{{blists.1.blog_content|truncatewords:5}}</p>
+                      <a href="/blogs/blogpost/{{blists.1.blog_title}}" class="btn btn-primary">See More</a>
+                    </div>
+                    <div class="card-footer">
+                        {{blists.0.blog_writer}}|{{blists.0.blog_date}}
                     </div>
                 </div>
-                <div class="row">
-                    <div class="card shadow-lg">                       
-                        <img src="/static/img/presentation.svg" alt="" class="img-fluid">
+            </div>
+            <div class="row">
+                <div class="card" style="">
+                    <img class="card-img-top" src="{{blists.2.thumbnail}}" alt="Card image">
+                    <div class="card-body">
+                      <h4 class="card-title">{{blists.2.blog_title}}</h4>
+                      <p class="card-text">{{blists.2.blog_content|truncatewords:5}}</p>
+                      <a href="/blogs/blogpost/{{blists.2.blog_title}}" class="btn btn-primary">See More</a>
+                    </div>
+                    <div class="card-footer">
+                        {{blists.0.blog_writer}}|{{blists.0.blog_date}}
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="row text-center mx-auto">   
+        
+        {%for blist in blists|slice:"3:"%}
+        <div class="col-sm-4 my-3">
+            <div class="card" style="">
+                <img class="card-img-top" src="{{blist.thumbnail}}" alt="Card image">
+                <div class="card-body">
+                  <h4 class="card-title">{{blist.blog_title}}</h4>
+                  <p class="card-text">{{blist.blog_content|truncatewords:6}}</p>
+                  <a href="/blogs/blogpost/{{blist.blog_title}}" class="btn btn-primary">See More</a>
+                </div>
+                <div class="card-footer">
+                    {{blist.blog_writer}}|{{blist.blog_date}}
+                </div>
+              </div>
+        </div>
+        {%endfor%}
+    </div>
+</div>
+
 
 {%endblock%}
+
+
