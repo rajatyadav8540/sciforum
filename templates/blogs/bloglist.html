@@ -5,9 +5,12 @@
 
 <div class="container mt-5">
     <div class="row d-flex">
-        <div class="col-sm-9 my-2">
-            <div class="card" style="">
-                <img class="card-img-top" src="{{blists.0.thumbnail}}" alt="Card image">
+        <div class="col-md-8 my-2">
+            <div class="card border-0 shadow" style="">
+                <div class="">
+
+                    <img class="card-img-top" src="/media/{{blists.0.thumbnail}}" alt="Card image">
+                </div>
                 <div class="card-body border">
                   <h4 class="card-title">{{blists.0.blog_title}}</h4>
                   <p class="card-text">{{blists.0.blog_content|truncatewords:50}}</p>
@@ -18,10 +21,13 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-3">
+        <div class="col-md-4">
             <div class="row my-2">
-                <div class="card" style="">
-                    <img class="card-img-top" src="{{blists.1.thumbnail}}" alt="Card image">
+                <div class="card border-0 shadow" style="">
+                    <div class="listimg">
+
+                        <img class="img-fluid" src="/media/{{blists.1.thumbnail}}" alt="Card image">
+                    </div>
                     <div class="card-body">
                       <h4 class="card-title">{{blists.1.blog_title}}</h4>
                       <p class="card-text">{{blists.1.blog_content|truncatewords:5}}</p>
@@ -33,8 +39,11 @@
                 </div>
             </div>
             <div class="row">
-                <div class="card" style="">
-                    <img class="card-img-top" src="{{blists.2.thumbnail}}" alt="Card image">
+                <div class="card shadow" style="">
+                    <div class="listimg">
+
+                        <img class="img-fluid" src="/media/{{blists.2.thumbnail}}" alt="Card image">
+                    </div>
                     <div class="card-body">
                       <h4 class="card-title">{{blists.2.blog_title}}</h4>
                       <p class="card-text">{{blists.2.blog_content|truncatewords:5}}</p>
@@ -47,12 +56,15 @@
             </div>
         </div>
     </div>
-    <div class="row text-center mx-auto">   
+    <div class="row  mx-auto">   
         
         {%for blist in blists|slice:"3:"%}
-        <div class="col-sm-4 my-3">
-            <div class="card" style="">
-                <img class="card-img-top" src="{{blist.thumbnail}}" alt="Card image">
+        <div class="col-md-4 my-3">
+            <div class="card border-0 shadow" style="">
+                <div class="listimg">
+                    <img class="img-fluid h-100" src="/media/{{blist.thumbnail}}" alt="Card image">
+
+                </div>
                 <div class="card-body">
                   <h4 class="card-title">{{blist.blog_title}}</h4>
                   <p class="card-text">{{blist.blog_content|truncatewords:6}}</p>
