@@ -1,0 +1,20 @@
+ .sticky{
+     position: sticky;
+     top: 80px;
+ }
+ .img-height{
+            height:250px;
+ }
+
+ .listimg{
+     height: 300px;
+     width: 300px;
+    }
+
+ @media screen and (min-width: 480px) {
+    .img-height{
+        height: 500px;
+    }
+
+
+}
