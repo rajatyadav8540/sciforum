@@ -1,21 +1,57 @@
 {%load static%}
-<ul class="nav  bg-warning shadow-lg">
-    <li class="nav-item" >
-        <a class="nav-link active" href="#" style="font-family: 'Vampiro One', cursive;"><img src="/static/img/logo.png" height="50" class="font-weight-bolder">Science Forum</a>
-    </li>
-    <li class="nav-item" >
-        <a class="nav-link active" href="#">Active link</a>
-    </li>
-    <li class="nav-item" >
-        <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item" >
-        <a class="nav-link disabled" href="#">Disabled link</a>
-    </li>
-    <li class="nav-item" >
-        <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item" >
-        <a class="nav-link disabled" href="#">Disabled link</a>
-    </li>
-</ul>
+<style>
+.bg-light{
+  background-color: #FFF !important;
+}
+.navbar-brand{
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.dropdown:hover>.dropdown-menu{
+		display: block;
+	}
+
+.navbar-light .navbar-nav .nav-link {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.navbar-light .navbar-nav .nav-item {
+  margin: 0 15px;
+}
+</style>
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+  <div class=" container">
+  <a class="navbar-brand" href="#"><img src="static\img\logo.png" class="xs-hidden" style=" height: 50px; width: 70px;">Science Forum</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="col-auto">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Scientists Gallery</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Events
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="#" tabindex="-1" aria-disabled="true">About</a>
+      </li>
+    </ul>
+  </div>
+  </div>
+  </div>
+</nav>

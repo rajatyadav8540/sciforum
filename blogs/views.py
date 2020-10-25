@@ -10,3 +10,4 @@ def bloglist(request):
 def blogPost(request,name):
     post=blogpost.objects.filter(blog_title=name)
     return render(request,'blogs/blogpost.html',{'posts':post[0]})
+
