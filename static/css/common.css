@@ -1,10 +1,9 @@
 .h-500{
     height:500px;
 }
-<<<<<<< HEAD
 .gap{
-    height: 80px;
-=======
+    height: 80px;}
+    
 .HBod{
     margin:3px;
     width: 18rem;
@@ -12,5 +11,4 @@
 .HBod:hover{
     border: 1px solid black;
     box-shadow: 3px 3px 10px  rgba(0, 0, 0, 0.2), -3px -3px 10px  rgba(0, 0, 0, 0.2);
->>>>>>> dc63f846dbab6d1181a4ec4c23f3f6735341cd14
 }
