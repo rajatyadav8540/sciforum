@@ -11,3 +11,12 @@ class TeamProfile(models.Model):
 
     def __str__(self):
         return self.Profile_title
+
+class ScientistGallery(models.Model):
+
+    Scientist_title=models.CharField(max_length=50,default="")
+    Scientist_content=models.CharField(max_length=5000,default="")
+    Scientist_thumbnail=models.ImageField(upload_to="img/Scientist",default="img/blogimg/science-1182713_1920.jpg")
+
+    def __str__(self):
+        return self.Scientist_title

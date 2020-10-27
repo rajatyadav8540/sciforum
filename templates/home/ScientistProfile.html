@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{%load static%}
+{%block title%}Scientist' Gallerys{%endblock%}
+{%block content%}
+
+ <div class="container my-5">
+        <div class="row">
+            <div class="col-md-9  shadow border p-5">
+                <div class="container">
+
+                    <h1 class="">{{ScientistProf.Scientist_title}}</h1>
+                    <div class="img-height"> 
+                         <img src="/media/{{ScientistProf.Scientist_thumbnail}}" alt="" class="img-fluid h-100 text-center">
+                    </div>
+                    <p class="text-justify">{{ScientistProf.Scientist_content}}</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="shadow py-2 sticky">
+                    <h3 class="p-2">Other Articles</h3>
+                    <ul>
+                     {%for Scien in Scientists%}
+                        <li class="p-0"><a href="/ScientistProfile/{{Scien.Scientist_title}}">{{Scien.Scientist_title}}</a></li>
+                    {%endfor%} 
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+{%endblock%}
