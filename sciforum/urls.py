@@ -18,6 +18,10 @@ from django.urls import include,path
 from django.conf import settings
 from django.conf.urls.static import static
 
+admin.site.site_header="Science Forum"
+admin.site.site_title="Science Forum"
+admin.site.index_title="Welcome to Science Forum admin panel"
+
 urlpatterns = [
     path('',include('home.urls')),
     path('blogs/',include('blogs.urls')),

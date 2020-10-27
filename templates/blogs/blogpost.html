@@ -7,26 +7,51 @@
 
     <div class="container my-5">
         <div class="row">
-            <div class="col-md-9  shadow border p-5">
-                <div class="container">
+            <div class="col-md-9   border p-5">
+                <div class="row shadow">
+                    <div class="container shadow">
 
-                    <h1 class="">{{posts.blog_title}}</h1>
-                    <p class="">/By-{{posts.blog_writer}}<br>{{posts.blog_date}}</p>
-                    <div class="img-height"> 
-                         <img src="/media/{{posts.thumbnail}}" alt="" class="img-fluid h-100 text-center">
+                        <h1 class="">{{posts.blog_title}}</h1>
+                        <p class="">/By-{{posts.blog_writer}}<br>{{posts.blog_date}}</p>
+                        <div class="img-height"> 
+                            <img src="/media/{{posts.thumbnail}}" alt="" class="img-fluid h-100 text-center">
+                        </div>
+                        <p class="text-justify">{{posts.blog_content}}</p>
+                    
                     </div>
-                    <p class="text-justify">{{posts.blog_content}}</p>
+                </div>
+                <div class="row shadow my-3" id="comment">
+                    <h2>Comments({{comments|length}}):</h2>
+                    <form action="/blogs/blogComment" class="form-inline" method="POST">
+                        {% csrf_token %}
+                        <input type="text"  name="comment" placeholder="Enter comment" class="w-100 form-control m-1">
+                        <input type="text"  name="username" placeholder="Enter name" class="w-sm-25 form-control m-1">
+                        <input type="text"  name="email" placeholder="Enter mail" class="w-sm-25 form-control m-1">
+                        <input type="hidden"  name="blog_title" value="{{posts.blog_title}}">
+                        <input type="submit"  value="POST" class=" bg-primary form-control m-1 text-light">
+                    </form>
+                    <div class="">
+
+                        {% for comment in comments%}
+                        <hr>
+                        <div class="mx-2">
+                           <span class="font-weight-bold">{{comment.username}}</span>&nbsp; <small>{{comment.timestamp}}</small>
+                            <p>{{comment.comment}}</p>
+                        </div>
+                        {%endfor%}
+                    </div>
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="shadow py-2 sticky">
+                <div class="shadow py-2 sticky overflow-scroll">
                     <h3 class="p-2">Recent posts</h3>
-                    <ul>
+                    <ul class="">
                     {%for blist in blists%}
                         <li class="p-0"><a href="/blogs/blogpost/{{blist.blog_title}}">{{blist.blog_title}}</a></li>
                     {%endfor%}
                     </ul>
                 </div>
+               
             </div>
         </div>
     </div> 
