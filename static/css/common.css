@@ -1,3 +1,11 @@
 .h-500{
     height:500px;
 }
+.HBod{
+    margin:3px;
+    width: 18rem;
+}
+.HBod:hover{
+    border: 1px solid black;
+    box-shadow: 3px 3px 10px  rgba(0, 0, 0, 0.2), -3px -3px 10px  rgba(0, 0, 0, 0.2);
+}
