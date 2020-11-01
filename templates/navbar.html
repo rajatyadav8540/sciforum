@@ -20,11 +20,17 @@
 .navbar-light .navbar-nav .nav-item {
   margin: 0 15px;
 }
+@media(max-width:575px):{
+    navbar-brand{
+        padding-top:15px;
+    }
+}
+
 </style>
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
   <div class=" container">
-  <a class="navbar-brand" href="/"><img src="/static/img/logo.png" class="xs-hidden" style=" height: 50px; width: 70px;">Science Forum</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <a class="navbar-brand mb-5" href="/"><img src="/static/img/logo.png" class="d-none d-sm-inline" style=" height: 50px; width: 70px;">Science Forum</a>
+  <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="col-auto">
@@ -58,3 +64,4 @@
   </div>
   </div>
 </nav>
+

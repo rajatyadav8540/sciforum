@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 class TeamProfile(models.Model):
@@ -15,7 +16,7 @@ class TeamProfile(models.Model):
 class ScientistGallery(models.Model):
 
     Scientist_title=models.CharField(max_length=50,default="")
-    Scientist_content=models.CharField(max_length=5000,default="")
+    Scientist_content=RichTextField(max_length=5000,default="")
     Scientist_thumbnail=models.ImageField(upload_to="img/Scientist",default="img/blogimg/science-1182713_1920.jpg")
 
     def __str__(self):
