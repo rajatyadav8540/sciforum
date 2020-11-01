@@ -2,7 +2,8 @@
     height:500px;
 }
 .gap{
-    height: 80px;}
+    height: 80px;
+}
     
 .HBod{
     margin:3px;
@@ -11,4 +12,15 @@
 .HBod:hover{
     border: 1px solid black;
     box-shadow: 3px 3px 10px  rgba(0, 0, 0, 0.2), -3px -3px 10px  rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 395px) {
+    nav > div > .logo{
+      display: hidden;
+    }
+}
+@media (min-width: 395px) and (max-width: 991px) {
+    nav > div > .but{
+      float: right;
+    }
 }
