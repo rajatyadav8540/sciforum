@@ -8,6 +8,15 @@
      width: 300px;
     }
 
+.form-line{
+    border:0;
+    border-bottom: 2px solid black;
+}
+
+.hshadow:hover{
+    box-shadow: 2px 2px 20px rgb(78, 77, 77),-2px -2px 20px rgb(78, 77, 77);
+}
+
  @media screen and (min-width: 480px) {
     .img-height{
         height: 500px;
@@ -20,5 +29,26 @@
     .sticky2{
        position: sticky;
        bottom:0px;
+   }
+   .heightm4{
+        max-height: 300px;
+   }
+   .height4{
+       height: 400px;
+   }
+   .height8{
+       height: 800px;
+   }
+   .height11{
+       height: 1000px;
+   }
+   .height2{
+       height: 200px;
+   }
+   .half-height{
+       height: 50px;
+   }
+   .height1{
+       height: 100px;
    }
 }

@@ -24,9 +24,9 @@ class blogComment(models.Model):
     linked_post=models.ForeignKey(blogpost,on_delete=models.CASCADE)
     parent=models.ForeignKey('self',on_delete=models.CASCADE,null=True)
     username=models.CharField(max_length=50,default="")
-    usermail=models.CharField(max_length=50,default="")
+    usermail=models.CharField(max_length=50,default="",null=True)
     timestamp=models.DateTimeField(default=now)
 
 
     def __str__(self):
-        return self.usermail 
+        return self.username 

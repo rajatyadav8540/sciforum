@@ -1,18 +1,21 @@
 {% extends 'base.html' %}
 {%load static%}
 {%block title%}Science Forum-blog{%endblock%}
+{%load extras%}
 
 
 {%block content%}
 
     <div class="container my-5">
         <div class="row">
-            <div class="col-md-9   border p-5">
-                <div class="row shadow">
-                    <div class="container shadow">
+            <div class="col-md-9  p-5">
+
+                <!-- blog -->
+                <div class="row border shadow">
+                    <div class="container ">
 
                         <h1 class="">{{posts.blog_title}}</h1>
-                        <p class="">/By-{{posts.blog_writer}}<br>{{posts.blog_date}}</p>
+                        <p class="">/By-{{posts.blog_writer}} on <small>{{posts.blog_date}}</small></p>
                         <div class="img-height"> 
                             <img src="/media/{{posts.thumbnail}}" alt="" class="img-fluid h-100 text-center">
                         </div>
@@ -20,34 +23,72 @@
                     
                     </div>
                 </div>
-                <div class="row shadow my-3" id="comment">
-                    <h2>Comments({{comments|length}}):</h2>
-                    <form action="/blogs/blogComment" class="form-inline" method="POST">
-                        {% csrf_token %}
-                        <input type="text"  name="comment" placeholder="Enter comment" class="w-100 form-control m-1">
-                        <input type="text"  name="username" placeholder="Enter name" class="w-sm-25 form-control m-1">
-                        <input type="text"  name="email" placeholder="Enter mail" class="w-sm-25 form-control m-1">
-                        <input type="hidden"  name="blog_title" value="{{posts.blog_title}}">
-                        <input type="submit"  value="POST" class=" bg-primary form-control m-1 text-light">
-                    </form>
-                    <div class="">
+
+                <!-- comment -->
+                <div class="row shadow my-3 p-3" id="comment">
+                    <h1>Comments({{comments|length}}):</h1>
+                       <div class="w-100">
+
+                           <form action="/blogs/blogComment"  method="POST">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                
+                                <input type="text"  name="comment" placeholder="Enter comment" class="d-block w-100 form-control m-1 ">
+                                <input type="text"  name="username" placeholder="Enter name" class="w-sm-25  form-control m-1 ">
+                                <input type="text"  name="email" placeholder="Enter mail" class="w-sm-25 form-control m-1 ">
+                            </div>
+                            <input type="hidden"  name="parentsn" value="">
+                            <input type="hidden"  name="blog_title" value="{{posts.blog_title}}">
+                            <input type="submit"  value="POST" class=" bg-primary form-control m-1 text-light">
+                        </form>
+                        
+                    </div>
+
+                    <div class="w-100">
 
                         {% for comment in comments%}
-                        <hr>
+                        <hr class="w-100">
                         <div class="mx-2">
                            <span class="font-weight-bold">{{comment.username}}</span>&nbsp; <small>{{comment.timestamp}}</small>
                             <p>{{comment.comment}}</p>
-
-                            <a data-toggle="collapse" data-target="#replyBox{{comment.sn}}" class="decoration-none">Reply(1)</a>
+                                
+                            <!-- reply -->
+                            <a data-toggle="collapse" data-target="#replyBox{{comment.sn}}" class="decoration-none">Reply></a>
 
                             <div id="replyBox{{comment.sn}}" class="collapse">
-                            Lorem ipsum dolor text....
+                                    <form action="/blogs/blogComment" class="form-inline" method="POST">
+                                        {% csrf_token %}
+                                        <div class="form-group">
+
+                                            <input type="text" class="form-control" name="comment">
+                                            <input type="text" class="form-control" name="username">
+                                        </div>
+                                        <input type="hidden"  name="parentsn" value="{{comment.sn}}">
+                                        <input type="hidden"  name="blog_title" value="{{posts.blog_title}}">
+                                        <input type="submit" value="Reply">
+                                    </form>
+                                    <div class="">
+                                        {% for reply in replyDict|get_val:comment.sn %}
+                                        <span class="font-weight-bold">{{reply.username}}</span>&nbsp; <small>{{reply.timestamp}}</small>
+                                        <p>{{reply.comment}}</p>
+            
+                                        {%endfor%}
+                                    </div>
                             </div>
+                            <!-- replyend -->
+
+
                         </div>
                         {%endfor%}
+
                     </div>
                 </div>
+                <!-- commentend -->
+
+
             </div>
+
+            <!-- otherblogs -->
             <div class="col-md-3">
                 <div class="shadow py-2 sticky overflow-scroll">
                     <h3 class="p-2">Recent posts</h3>

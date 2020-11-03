@@ -2,35 +2,35 @@
 {%load static%}
 {%block title%}Science Forum-home{%endblock%}
 {%block content%}
+<!-- {{blists}} -->
+<div class="container mt-5 ">
+    <div class="row  ">
+        <div class="col-md-12 my-2">
+            <div class="card border hshadow " style="">
+                <div class="height8 overflow-hidden">
 
-<div class="container mt-5 border">
-    <div class="row d-flex">
-        <div class="col-md-8 my-2">
-            <div class="card border-0 shadow" style="">
-                <div class="">
-
-                    <img class="card-img-top" src="/media/{{blists.0.thumbnail}}" alt="Card image">
+                    <img class="img-fluid  w-100" src="/media/{{blists.0.thumbnail}}" alt="Card image">
                 </div>
                 <div class="card-body border">
-                  <h4 class="card-title">{{blists.0.blog_title}}</h4>
-                  <p class="card-text">{{blists.0.blog_content|truncatewords:50}}</p>
-                  <a href="/blogs/blogpost/{{blists.0.blog_title}}" class="btn btn-primary">See More</a>
+                  <h4 class="card-title font-weight-bold">{{blists.0.blog_title}}</h4>
+                  <p class="card-text text-muted">{{blists.0.blog_content|truncatewords:50|safe }}</p>
+                  <a href="/blogs/blogpost/{{blists.0.blog_title}}" class="">See More>></a>
                 </div>
                 <div class="card-footer">
                     {{blists.0.blog_writer}}|{{blists.0.blog_date}}
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="row my-2">
+        <!-- <div class="col-md-4">
+            <div class="my-2">
                 <div class="card border-0 shadow" style="">
-                    <div class="listimg">
+                    <div class=" overflow-hidden border">
 
-                        <img class="img-fluid" src="/media/{{blists.1.thumbnail}}" alt="Card image">
+                        <img class="img-fluid w-100" src="/media/{{blists.1.thumbnail}}" alt="Card image">
                     </div>
                     <div class="card-body">
                       <h4 class="card-title">{{blists.1.blog_title}}</h4>
-                      <p class="card-text">{{blists.1.blog_content|truncatewords:5}}</p>
+                      <p class="card-text">{{blists.1.blog_content|truncatewords:5|safe }}</p>
                       <a href="/blogs/blogpost/{{blists.1.blog_title}}" class="btn btn-primary">See More</a>
                     </div>
                     <div class="card-footer">
@@ -38,15 +38,15 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="my-2">
                 <div class="card shadow" style=""> 
-                    <div class="listimg">
+                    <div class=" overflow-hidden ">
 
-                        <img class="img-fluid" src="/media/{{blists.2.thumbnail}}" alt="Card image">
+                        <img class="img-fluid w-100 " src="/media/{{blists.2.thumbnail}}" alt="Card image">
                     </div>
                     <div class="card-body">
                       <h4 class="card-title">{{blists.2.blog_title}}</h4>
-                      <p class="card-text">{{blists.2.blog_content|truncatewords:5}}</p>
+                      <p class="card-text">{{blists.2.blog_content|truncatewords:5|safe}}</p>
                       <a href="/blogs/blogpost/{{blists.2.blog_title}}" class="btn btn-primary">See More</a>
                     </div>
                     <div class="card-footer">
@@ -54,31 +54,41 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
-    <div class="row  mx-auto">   
+
+    <div class="row">   
         
-        {%for blist in blists|slice:"3:"%}
-        <div class="col-md-4 my-3">
-            <div class="card border-0 shadow" style="">
-                <div class="listimg">
-                    <img class="img-fluid h-100" src="/media/{{blist.thumbnail}}" alt="Card image">
+        {%for blist in blists|slice:"1:"%}
+        <div class="col-md-4 my-3 d-flex">
+            <div class="card border-0 hshadow border " style="">
+                <div class="height2 overflow-hidden shadow">
+                    <img class="card-img-top" src="/media/{{blist.thumbnail}}" alt="Card image">
 
                 </div>
-                <div class="card-body">
-                  <h4 class="card-title">{{blist.blog_title}}</h4>
-                  <p class="card-text">{{blist.blog_content|truncatewords:6}}</p>
-                  <a href="/blogs/blogpost/{{blist.blog_title}}" class="btn btn-primary">See More</a>
+                <div class="card-body height1 overflow-hidden">
+                  <h3 class="card-title font-weight-bold my-0">{{blist.blog_title}}</h3>
+                  <p class="card-text text-muted">{{blist.blog_content|truncatewords:15|safe}}</p>
+                 
                 </div>
                 <div class="card-footer">
-                    {{blist.blog_writer}}|{{blist.blog_date}}
+                    {{blist.blog_writer}}|{{blist.blog_date}} <br> <a href="/blogs/blogpost/{{blist.blog_title}}" class="">See More>></a>
                 </div>
               </div>
         </div>
         {%endfor%}
     </div>
 </div>
-
+<!-- <script>
+    $(".hshadow").hover(
+      function () {
+        $(this).addClass("shadow-lg");
+      },
+      function () {
+        $(this).removeClass("shadow-lg");
+      }
+    );
+    </script> -->
 
 {%endblock%}
 

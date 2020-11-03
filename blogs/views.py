@@ -1,6 +1,7 @@
 from django.shortcuts import render,HttpResponse,redirect 
 from .models import blogpost,blogComment
 from django.contrib import messages
+from blogs.templatetags import extras
 
 # Create your views here.
 def bloglist(request):
@@ -10,15 +11,24 @@ def bloglist(request):
 
 def blogPost(request,name):
     post=blogpost.objects.filter(blog_title=name)
-    comments=blogComment.objects.filter(linked_post=post[0].id)
+    comments=blogComment.objects.filter(linked_post=post[0].id,parent=None)
+    replies=blogComment.objects.filter(linked_post=post[0].id).exclude(parent=None)
+    replyDict={}
+    for reply in replies:
+        if reply.parent.sn not in replyDict.keys():
+            replyDict[reply.parent.sn]=[reply]
+        else:
+            replyDict[reply.parent.sn].append(reply)
     commentl=blogComment.objects.all()
     bloglist=blogpost.objects.all()
+    # replies=blogComment.objects.filter(parent=)
     print(comments)
     context={
         'posts':post[0],
         'blists':bloglist[:10:-1],
         'comments':comments[::-1],
-        'commentl':commentl[:5:-1]}
+        'commentl':commentl[:5:-1],
+        'replyDict':replyDict}
     return render(request,'blogs/blogpost.html',context)
 
 
@@ -29,8 +39,15 @@ def blogcomment(request):
         user_email=request.POST.get("email")
         blog_title=request.POST.get("blog_title")
         post=blogpost.objects.get(blog_title=blog_title)
-        comment=blogComment(comment=comment,username=username,usermail=user_email,linked_post=post)
-        comment.save()
+        parentsn=request.POST.get("parentsn")
+        if parentsn=="":
+            comment=blogComment(comment=comment,username=username,usermail=user_email,linked_post=post)
+            comment.save()
+
+        else:
+            parent=blogComment.objects.get(sn=parentsn)
+            comment=blogComment(comment=comment,username=username,usermail=user_email,linked_post=post,parent=parent)
+            comment.save()
       
        
 
