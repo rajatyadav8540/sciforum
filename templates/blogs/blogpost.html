@@ -16,7 +16,7 @@
                         <div class="img-height"> 
                             <img src="/media/{{posts.thumbnail}}" alt="" class="img-fluid h-100 text-center">
                         </div>
-                        <p class="text-justify">{{posts.blog_content}}</p>
+                        <p class="text-justify">{{posts.blog_content|safe}}</p>
                     
                     </div>
                 </div>
@@ -37,6 +37,12 @@
                         <div class="mx-2">
                            <span class="font-weight-bold">{{comment.username}}</span>&nbsp; <small>{{comment.timestamp}}</small>
                             <p>{{comment.comment}}</p>
+
+                            <a data-toggle="collapse" data-target="#replyBox{{comment.sn}}" class="decoration-none">Reply(1)</a>
+
+                            <div id="replyBox{{comment.sn}}" class="collapse">
+                            Lorem ipsum dolor text....
+                            </div>
                         </div>
                         {%endfor%}
                     </div>

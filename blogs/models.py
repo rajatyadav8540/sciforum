@@ -8,7 +8,7 @@ from ckeditor.fields import RichTextField
 class blogpost(models.Model):
 
     blog_title=models.CharField(max_length=50,default="")
-    blog_content=RichTextField()
+    blog_content=RichTextField(blank=True,null=True)
     blog_writer=models.CharField(max_length=50,default="scienceforum")
     blog_date=models.DateTimeField(default=now)
     thumbnail=models.ImageField(upload_to="img/blogimg",default="img/logo.png")
