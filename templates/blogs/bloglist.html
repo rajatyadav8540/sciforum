@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{%load static%}
+{%load static %}
 {%block title%}Science Forum-home{%endblock%}
 {%block content%}
 <!-- {{blists}} -->
@@ -9,7 +9,16 @@
             <div class="card border hshadow " style="">
                 <div class="height8 overflow-hidden">
 
+<<<<<<< HEAD
                     <img class="img-fluid  w-100" src="/media/{{blists.0.thumbnail}}" alt="Card image">
+=======
+<div class="container mt-5 border">
+    <div class="row d-flex">
+        <div class="col-md-8 my-2">
+            <div class="card border-0 shadow">
+                <div class="">
+                    <img class="card-img-top" src="/media/{{blists.0.thumbnail}}" alt="Card image">
+>>>>>>> 53d8c2c74eb4509940c78894a669f7983771f356
                 </div>
                 <div class="card-body border">
                   <h4 class="card-title font-weight-bold">{{blists.0.blog_title}}</h4>
