@@ -1,66 +1,69 @@
 {%load static%}
 <style>
 .bg-light{
-  background-color: #FFF !important;
+    background-color: white;
 }
 .navbar-brand{
-  font-size: 28px;
-  font-weight: bold;
-  text-transform: uppercase;
+    font-weight:bold;
+    font-family: monosapce;
+    font-size: 28px;
 }
-.dropdown:hover>.dropdown-menu{
-		display: block;
-	}
+.navbar-light .navbar-nav  .nav-link{
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase; 
+    color: black;
+}
 
-.navbar-light .navbar-nav .nav-link {
-  font-size: 14px;
-  font-weight: 700;
-  text-transform: uppercase;
+.navbar-light .navbar-nav  .nav-item{
+    margin: 0 15px;
+    color: black;
 }
-.navbar-light .navbar-nav .nav-item {
-  margin: 0 15px;
+.dropdown-menu{
+  border: none;
+  background: rgba(255,255,255,.8); 
 }
-@media(max-width:575px):{
-    navbar-brand{
-        padding-top:15px;
+.dropdown:hover .dropdown-menu{
+        display: block;
     }
-}
-
 </style>
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
-  <div class=" container">
-  <a class="navbar-brand mb-5" href="/"><img src="/static/img/logo.png" class="d-none d-sm-inline" style=" height: 50px; width: 70px;">Science Forum</a>
-  <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg navbar-light bg-light font-weight-bold uppercase shadow">
+    <div class="container">
+  <a class="navbar-brand" href="/"><img src="static/img/logo.png" style="width: 70px; height: 50px;">ScienceForum</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="col-auto">
+
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="/blogs/">Blogs</a>
       </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="/scienceGallery/">Scientist Gallery</a>
-      </li>
-      <li class="nav-item dropdown active">
+      <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Events
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/events">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
+        <div class="dropdown-menu shadow" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">1st Event</a>
+          <a class="dropdown-item" href="#">2st Event</a>
+          <a class="dropdown-item" href="#">3st Event</a>
+          <a class="dropdown-item" href="#">4nd Event</a>
+          <a class="dropdown-item" href="#">5nd Event</a>
+          <a class="dropdown-item" href="#">6nd Event</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" href="/events/">More...</a>
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="/about" tabindex="-1" aria-disabled="true">About</a>
+        <a class="nav-link" href="/scienceGallery/">Scientist Gallery</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/about/">About</a>
       </li>
     </ul>
-  </div>
   </div>
   </div>
 </nav>
