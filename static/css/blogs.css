@@ -16,6 +16,9 @@
 .hshadow:hover{
     box-shadow: 2px 2px 20px rgb(78, 77, 77),-2px -2px 20px rgb(78, 77, 77);
 }
+.footertext{
+    font-size: 5em;
+}
 
  @media screen and (min-width: 480px) {
     .img-height{
@@ -50,5 +53,11 @@
    }
    .height1{
        height: 100px;
+   }
+   .height7{
+       height: 700px;
+   }
+   .height5{
+       height: 500px;
    }
 }
