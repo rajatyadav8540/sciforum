@@ -1,9 +1,11 @@
 from django.shortcuts import render
-from .models import TeamProfile,ScientistGallery
+from .models import TeamProfile,ScientistGallery,admodal,testlink
 
 # Create your views here.
 def index(request):
-    return render(request,'home/index.html')
+    ads=admodal.objects.all()
+    test=testlink.objects.all()
+    return render(request,'home/index.html',{'ads':ads,'tests':test})
  
 def about(request):
     profileDetails=TeamProfile.objects.all()

@@ -21,3 +21,24 @@ class ScientistGallery(models.Model):
 
     def __str__(self):
         return self.Scientist_title
+
+
+class admodal(models.Model):
+
+    name=models.CharField(max_length=50,default="")
+    Image=models.ImageField(upload_to="img/ads",default="")
+    link=models.CharField(max_length=500,default="")
+
+    def __str__(self):
+        return self.name
+
+
+class testlink(models.Model):
+
+    name_of_test=models.CharField(max_length=50,default="")
+    time_of_test=models.CharField(max_length=50,default="",null=True)
+    duration_of_test=models.CharField(max_length=50,default="",null=True)
+    link_of_test=models.CharField(max_length=500,default="")
+
+    def __str__(self):
+        return self.name_of_test

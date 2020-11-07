@@ -1,12 +1,12 @@
-html *
+/* html *
 {
-   font-size: 1em !important;
+  
    color: #000 !important;
    font-family: Arial !important;
-}
+} */
 
 body{
-    font-family: ;
+    font-family: Arial;
 }
 
 .h-500{
@@ -24,6 +24,13 @@ body{
     border: 1px solid black;
     box-shadow: 3px 3px 10px  rgba(0, 0, 0, 0.2), -3px -3px 10px  rgba(0, 0, 0, 0.2);
 }
+#adshort{
+    height: 400px;
+    width: 400px;
+    position: fixed;
+    right: 0;
+    bottom: 500px;
+}
 
 @media (max-width: 395px) {
     nav > div > .logo{
@@ -34,4 +41,19 @@ body{
     nav > div > .but{
       float: right;
     }
+}
+
+@media screen and (min-width: 480px) {
+
+    .testlink{
+        
+        width: 400px;
+        position: fixed;
+        z-index: 1000;
+        bottom: 0;
+        right: 0;
+        border: 5px solid blue;
+        border-radius: 20px;
+    }
+
 }

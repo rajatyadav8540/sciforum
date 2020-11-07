@@ -7,7 +7,7 @@
 </div>
 <div class="container">
     
-    <h1 class="font-weight-bold text-center display-1">events</h1>
+    <h1 class="font-weight-bold text-center">Events</h1>
 
     <p class=" text-justify">
         As we look back to our ancient times we see so much development in the world. From Big Bang
@@ -42,14 +42,13 @@ year.
             <div class="card-body">
                <div class="row">
                 <div class="col-sm-6">
-                    <h1 class="display-1">{{event.event_name}}</h1>
-                    <p class="text-justify">{{event.event_content|truncatewords:40}}</p>
-                    <a href="#demo" class="btn btn-primary" data-toggle="collapse">Simple collapsible</a>
-                    <div id="demo" class="collapse">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </div>
+                    <h1 class="text-primary">{{event.event_name}}</h1>
+                    <!-- <p class="text-justify">{{event.event_content|slice:":200"}} -->
+                     <small class="text-muted">{{event.duration}}</small><br>
+                     <small class="text-muted">{{event.venue}}</small>
+                     <p class="">{{event.event_description}}</p>
+                    <a href="#demo{{event.id}}" class="mb-0 btn btn-sm btn-primary" data-toggle="collapse">Description</a>
+                    
                 </div>
                 <div class="col-sm-6  px-5">
                     <div id="carouselId" class="carousel slide" data-ride="carousel">
@@ -78,6 +77,9 @@ year.
                             <span class="sr-only">Next</span>
                         </a>
                     </div>
+                </div>
+                <div id="demo{{event.id}}" class="collapse ">
+                    <p class="text-justify">{{event.event_content|safe}}</p>
                 </div>
             </div>
             </div>
@@ -116,20 +118,21 @@ year.
                     </div>
                 </div>
                 <div class="col-sm-6">
-                    <h2 class="">{{event.event_name}}</h2>
-                    <label for="band">
+                    <h1 class="text-primary">{{event.event_name}}</h1>
+                    
                         
-                        <p class="text-justify">{{event.event_content|truncatewords:40}}</p>
-                    </label>
-                    <a href="#demo" class="btn btn-primary " data-toggle="collapse" id="band">Simple collapsible</a>
-                        <div id="demo" class="collapse">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        </div>
+                        <!-- <p class="text-justify">{{event.event_content|slice:":200"}}</p> -->
+                        <small class="text-muted">{{event.duration}}</small><br>
+                        <small class="text-muted">{{event.venue}}</small>
+                        <p class="">{{event.event_description}}</p>
+                   
+                    <a href="#demo{{event.id}}" class="mb-0 btn btn-sm btn-primary" data-toggle="collapse" id="band">Description</a>
                 </div>
                 
             </div>
+                    <div id="demo{{event.id}}" class="collapse">
+                        <p class="text-justify">{{event.event_content|safe}}</p>
+                    </div>
             </div>
         </div>
         {% endif%}

@@ -3,6 +3,29 @@
 {%block title%}Science Forum-home{%endblock%}
 {%block content%}
 
+<div id="myModal" class="modal fade ">
+  <div class="modal-dialog modal-xl h-100">
+      <div class="modal-content ">
+
+          <div class="modal-header">
+              <h4 class="modal-title mx-auto">{{ads.0.name}}</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true" data-target="#adshort">&times;</button>
+          </div>
+
+          <div class="modal-body p-0 mx-auto" style="height:75vh;">
+             <img src="/media/{{ads.0.Image}}" alt="" class="img-fluid mx-auto h-100">
+          </div>
+
+          <div class="modal-footer">
+          <p>For more information  <a href="{{ads.0.link}}" class="active text-primary">Click here.</a></p> <br>
+            <!-- <p class="text-center">For more information go to our &nbsp; <a href="donation.php"><button class="btn btn-success">Events</button></a></p>
+            <p class="text-center">and &nbsp; <a href="gallery.php"><button class="btn btn-success">Posts</button></a></p> -->
+          </div>
+
+      </div>
+  </div>
+</div>
+
 <div class="jumbotron jumbotron-fluid">
   <div class="container text-center">
     <h1 class="text-fluid">"Scientists Believe in things not in persons..."</h1>      
@@ -40,6 +63,7 @@
     </div>
 </div>
 <br>
+
 <div class="container-fluid bg-grey shadow">
   <div class="row mt-4 p-4">
     <div class="col-sm-4">
@@ -128,6 +152,37 @@
     <span class="carousel-control-next-icon"></span>
   </a>
 </div>
+<div id="adshort">
+  <img src="#" alt="ads">
+</div>
+
+<div class="testlink bg-light">
+  <h2 class="text-primary text-center ">Tests</h2>
+  <ul class="list-group">
+  {%for test in tests%}
+      <li class="striped list-group-item">
+        <h4>{{test.name_of_test}}</h4>
+        <a href="{{test.link_of_test}}" class="">Click here for test</a>
+      </li>
+  {%endfor%}
+  </ul>
+
+</div>
+
+{% if ads%}
+<script>
+  $(document).ready(function(){
+      $("#myModal").modal('show');
+  });
+  </script>
+{%endif%}
+
+<!-- <script>
+  $(".minimize").click(function(){
+    $("#adshort").css({"height":"400px","width":"400px","position":"sticky","top":"80px","right":"0px"});
+
+  });
+</script> -->
 
 
 {%endblock%}

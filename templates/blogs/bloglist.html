@@ -11,49 +11,16 @@
 
                     <img class="img-fluid  w-100" src="/media/{{blists.0.thumbnail}}" alt="Card image">
                 </div>
-                <div class="card-body border height2">
-                    <a href="/blogs/blogpost/{{blists.0.blog_title}}" class="text-decoration-none"> <h4 class="card-title font-weight-bold text-primary">{{blists.0.blog_title}}</h4></a>
-                  <p class="card-text text-muted">{{blists.0.blog_content|truncatewords:20|safe }}</p>
+                <div class="card-body border height2 overflow-hidden">
+                    <a href="/blogs/blogpost/{{blists.0.blog_title}}" class="text-decoration-none"> <h4 class="card-title font-weight-bold text-primary">{{blists.0.blog_title|upper}}</h4></a>
+                  <small class="card-text text-muted lh">{{blists.0.blog_content|truncatewords:20|safe }}</small>
                 </div>
                 <div class="card-footer py-0 overflow-hidden mb-0" style="height:40px;">
-                    <p class="my-0 footertext"> {{blists.0.blog_writer}}|<small class="text-muted">{{blists.0.blog_date}}</small> </p>
+                    <p class="my-0 "> {{blists.0.blog_writer}}|<small class="text-muted">{{blists.0.blog_date}}</small> </p>
              </div>
             </div>
         </div>
-        <!-- <div class="col-md-4">
-            <div class="my-2">
-                <div class="card border-0 shadow" style="">
-                    <div class=" overflow-hidden border">
-
-                        <img class="img-fluid w-100" src="/media/{{blists.1.thumbnail}}" alt="Card image">
-                    </div>
-                    <div class="card-body">
-                      <h4 class="card-title">{{blists.1.blog_title}}</h4>
-                      <p class="card-text">{{blists.1.blog_content|truncatewords:5|safe }}</p>
-                      <a href="/blogs/blogpost/{{blists.1.blog_title}}" class="btn btn-primary">See More</a>
-                    </div>
-                    <div class="card-footer">
-                        {{blists.0.blog_writer}}|{{blists.0.blog_date}}
-                    </div>
-                </div>
-            </div>
-            <div class="my-2">
-                <div class="card shadow" style=""> 
-                    <div class=" overflow-hidden ">
-
-                        <img class="img-fluid w-100 " src="/media/{{blists.2.thumbnail}}" alt="Card image">
-                    </div>
-                    <div class="card-body">
-                      <h4 class="card-title">{{blists.2.blog_title}}</h4>
-                      <p class="card-text">{{blists.2.blog_content|truncatewords:5|safe}}</p>
-                      <a href="/blogs/blogpost/{{blists.2.blog_title}}" class="btn btn-primary">See More</a>
-                    </div>
-                    <div class="card-footer">
-                        {{blists.0.blog_writer}}|{{blists.0.blog_date}}
-                    </div>
-                </div>
-            </div>
-        </div> -->
+       
     </div>
 
     <div class="row d-flex">   
@@ -66,18 +33,35 @@
 
                 </div>
                 <div class="card-body height1 overflow-hidden">
-                    <a href="/blogs/blogpost/{{blist.blog_title}}" class="text-decoration-none"><h2 class="card-title font-weight-bold text-primary my-0" >{{blist.blog_title|upper}}</h2></a>
-                  <p class="my-2">{{blist.blog_content|truncatewords:5|safe}}</p>
+                    <a href="/blogs/blogpost/{{blist.blog_title}}" class="text-decoration-none "><h4 class="card-title font-weight-bold text-primary my-0" >{{blist.blog_title|upper}}</h4></a>
+                  <small class="my-2 text-muted">{{blist.blog_content|truncatewords:5|safe}}</small>
                  
                 </div>
                 <div class="card-footer py-0 overflow-hidden" style="height:40px;">
-                       <p class="my-0 footertext"> {{blist.blog_writer}}|<small class="text-muted">{{blist.blog_date}}</small> </p>
+                       <p class="m-0"> {{blist.blog_writer}}|<small class="text-muted">{{blist.blog_date}}</small> </p>
                 </div>
               </div>
         </div>
         {%endfor%}
 
     </div>
+</div>
+<div class="text-center">
+    
+    <ul class="pagination justify-content-center">
+
+        {% if blists.has_previous%}
+       <li class="page-item"> <a href="?page={{blists.previous_page_number}}" class="page-link"> 
+           <i class="fas fa-angle-double-left"></i>prev</a></li>
+       {%endif%}
+       <li class="page-item"><a href="?page=1" class="page-link">1</a></li>...
+       <!-- ..<li class="page-item"><a href="?page={{blists.page_number}}" class="page-link">{{tpage}}</a></li>.. -->
+       <li class="page-item"><a href="?page={{tpage}}" class="page-link">{{tpage}}</a></li>
+       {% if blists.has_next%}
+       <li class="page-item"><a href="?page={{blists.next_page_number}}" class="page-link">
+           next<i class="fas fa-angle-double-right"></i></a></li>
+       {%endif %}
+    </ul>
 </div>
 <!-- <script>
     $(".hshadow").hover(

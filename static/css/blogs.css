@@ -19,6 +19,9 @@
 .footertext{
     font-size: 5em;
 }
+.lh{
+    line-height: 1px;
+}
 
  @media screen and (min-width: 480px) {
     .img-height{

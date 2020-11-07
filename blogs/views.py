@@ -2,11 +2,20 @@ from django.shortcuts import render,HttpResponse,redirect
 from .models import blogpost,blogComment
 from django.contrib import messages
 from blogs.templatetags import extras
+from django.core.paginator import Paginator,EmptyPage
 
 # Create your views here.
 def bloglist(request):
     bloglist=blogpost.objects.all()
-    return render(request,'blogs/bloglist.html',{'blists':bloglist[::-1]})
+    p=Paginator(bloglist[::-1],7)
+
+    page_num=request.GET.get('page',1)
+    tpage=p.num_pages
+    try:
+        page=p.page(page_num)
+    except EmptyPage:
+        page=p.page(1)
+    return render(request,'blogs/bloglist.html',{'blists':page,'tpage':tpage})
  
 
 def blogPost(request,name):

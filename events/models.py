@@ -6,7 +6,10 @@ from ckeditor.fields import RichTextField
 class event(models.Model):
     
     event_name= models.CharField(max_length=50,default="")
-    event_content= RichTextField(max_length=1000,default="")
+    duration=models.CharField(max_length=50,default="",null=True)
+    venue=models.CharField(max_length=50,default="",null=True)
+    event_description=models.TextField(max_length=200,default="")
+    event_content= RichTextField(max_length=2000,default="")
     event_image=models.ImageField(upload_to='img/eventimages',default="/static/img/logo.png")
 
     def __str__(self):
