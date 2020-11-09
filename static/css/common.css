@@ -39,6 +39,9 @@ body{
 .chhotafont2{
     font-size: 17px;
 }
+.chhotafont3{
+    font-size: 17px;
+}
 
 .hshadow:hover{
     box-shadow: 2px 2px 20px rgb(78, 77, 77),-2px -2px 20px rgb(78, 77, 77);
@@ -49,6 +52,17 @@ body{
 }
 .bg-grey{
     background-color: rgba(216, 216, 216, 1);
+}
+
+.bg-blue{
+    background-color: #33adff;
+}
+.text-blue{
+    color: #3366cc;
+}
+
+.bg-yellow{
+    background-color: #ffcc00;
 }
 
 @media (max-width: 395px) {

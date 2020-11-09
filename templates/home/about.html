@@ -5,7 +5,7 @@
 <div class="jumbotron">
 <h1 class="text-center display-4">About Us</h1>
 <div class="container">
-  <p class="lead text-justify">The Science Forum guides and helps students form a staunch scientific outlook, exemplifying the need of the hour– to defeat curiosity and feed knowledge to the mind. 
+  <p class="lead text-justify chhotafont3">The Science Forum guides and helps students form a staunch scientific outlook, exemplifying the need of the hour– to defeat curiosity and feed knowledge to the mind. 
 We, at Science Forum, organise lectures and demonstrations by renowned scientists and professors to enlighten the students about ongoing scientific research and breakthroughs in the world of science. 
 We also organise group discussions to enable students enhance their sphere of knowledge by interacting with other students studying different disciples and building a broad sense of scientific approach. 
 We organise trips to renowned laboratories and scientific landmarks where students can explore and have a hands-on experience in modern research and technology, gaining experience and inspiration from these excursions. 
@@ -20,19 +20,51 @@ Science Forum exhibits an expansive array of opportunities for students to explo
  <br>
 <div class="container">
     <div class="row text-center mx-auto ">
-        {%for profile in profiles%}
-        <div class="col-sm-4">
-            <div class="card shadow" style="width: 18rem; margin-bottom:20px;">
-                <img class="card-img-top" src="/media/{{profile.Profile_thumbnail}}" alt="Card image cap">
-                <div class="card-body">
-                <h5 class="card-title">{{profile.Profile_title}}</h5>
-                <h6 class="card-title">{{profile.Profile_Post}}</h6>
-                <p class="card-text">{{profile.Profile_content}}</p>
-                <a href="{{profile.Profile_contact}}" class="btn btn-primary">Contact Email</a>
-                </div>
+        <div class="card-deck">
+            <div class="card lshadow">
+                <div class="height4 overflow-hidden"> 
+                    <img class="card-img-top" src="/media/{{profiles.0.Profile_thumbnail}}" alt="Card image cap">
+                   </div> 
+                    <div class="card-body">
+                    <h5 class="card-title text-blue font-weight-bold">{{profiles.0.Profile_title}}</h5>
+                    <h6 class="card-title text-muted">{{profiles.0.Profile_Post}}</h6>
+                    <p class="card-text chhotafont">{{profiles.0.Profile_content}}</p>
+                    <a href="{{profiles.0.Profile_contact}}" class="btn btn-primary">Contact Email</a>
+                    </div>
+            </div>
+            <div class="card lshadow">
+                <div class="height4 overflow-hidden"> 
+                    <img class="card-img-top" src="/media/{{profiles.1.Profile_thumbnail}}" alt="Card image cap">
+                   </div> 
+                    <div class="card-body">
+                    <h5 class="card-title text-blue font-weight-bold">{{profiles.1.Profile_title}}</h5>
+                    <h6 class="card-title text-muted">{{profiles.1.Profile_Post}}</h6>
+                    <p class="card-text chhotafont">{{profiles.1.Profile_content}}</p>
+                    <a href="{{profiles.1.Profile_contact}}" class="btn btn-primary">Contact Email</a>
+                    </div>
             </div>
         </div>
-        {%endfor%}
+
+        <div class="row d-flex">
+        {%for profile in profiles%}
+          <div class="col-lg-3 col-md-2 my-2">
+
+              <div class="card lshadow height7" style="">
+                  <div class="height2 overflow-hidden"> 
+                      <img class="card-img-top" src="/media/{{profile.Profile_thumbnail}}" alt="Card image cap">
+                    </div> 
+                    <div class="card-body">
+                        <h5 class="card-title text-blue font-weight-bold my-0">{{profile.Profile_title}}</h5>
+                        <h6 class="card-title text-muted my-0">{{profile.Profile_Post}}</h6>
+                        <hr>
+                        <p class="card-text chhotafont text-justify">{{profile.Profile_content}}</p>
+                        <a href="{{profile.Profile_contact}}" class="btn btn-primary">Contact Email</a>
+                    </div>
+              </div>
+
+            </div>
+                {%endfor%}
+        </div>
     </div>
 </div>
 

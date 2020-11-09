@@ -3,6 +3,7 @@
 {%block title%}Science Forum-home{%endblock%}
 {%block content%}
 <!-- Modal Code -->
+{% if ads %}
 <div id="myModal" class="modal fade ">
   <div class="modal-dialog modal-xl h-100">
       <div class="modal-content ">
@@ -17,35 +18,36 @@
           </div>
 
           <div class="modal-footer">
-          <p>For more information  <a href="{{ads.0.link}}" class="active text-primary">Click here.</a></p> <br>
+          <p>For more information  <a href="{{ads.0.link}}" class="active text-blue">Click here.</a></p> <br>
           </div>
 
       </div>
   </div>
 </div>
+{%endif%}
 <!-- Modal end -->
 <!-- First div of index -->
 
-<div class="jumbotron jumbotron-fluid bg-primary">
+<div class="jumbotron jumbotron-fluid bg-blue">
   <div class="container text-center">
     <h1 class="text-fluid text-light font-weight-bold">"Never.Stop.Questioning"</h1>      
   </div>
 </div>
 <!-- Our Aim -->
-     <h1 class="font-weight-bold text-primary text-center">OUR AIM</h1>
+     <h1 class="font-weight-bold text-blue text-center">OUR AIM</h1>
 <br>
 <div class="container">
     <div class="card-deck">
         <div class="card text-center lshadow py-0">
             <div class="card-body">
-                <h5 class="card-title text-primary font-weight-bold">Research</h5>
+                <h5 class="card-title text-blue font-weight-bold">Research</h5>
                 <img src="/static/img/rsearch.svg" alt="" class="img-fluid">
                 <p class="card-text chhotafont text-justify">We promote research culture among the college students.</p>
             </div>
         </div>
         <div class="card text-center lshadow py-0">
             <div class="card-body">
-                <h5 class="card-title text-primary font-weight-bold">Innovate</h5>
+                <h5 class="card-title text-blue font-weight-bold">Innovate</h5>
                 <img src="/static/img/innovate.svg" alt="" class="img-fluid">
                 <p class="card-text chhotafont text-justify">We aim at providing an environment to encourage students to think critically
                   and develop new ideas.</p>
@@ -53,19 +55,18 @@
         </div>
         <div class="card text-center lshadow py-0">
             <div class="card-body">
-                <h5 class="card-title text-primary font-weight-bold">Educate</h5>
+                <h5 class="card-title text-blue font-weight-bold">Educate</h5>
                 <img src="/static/img/educate.svg" alt="" class="img-fluid">
-                <p class="card-text chhotafont text-justify">We encourage and motivate students in applications of science and
-                  its interface with society.</p>
+                <p class="card-text chhotafont text-justify">We provide learning opportunities to students from different fields of science
+                  and arts by discussions on the latest topics of science and technology.</p>
             </div>
         </div>
         <div class="card text-center lshadow py-0">
           <div class="card-body">
-              <h5 class="card-title text-primary font-weight-bold">Encourage</h5>
+              <h5 class="card-title text-blue font-weight-bold">Encourage</h5>
               <img src="/static/img/encourage.svg" alt="" class="img-fluid">
-              <p class="card-text chhotafont text-justify">This is a wider card with supporting text below as a natural
-                 lead-in to additional content. This card has even longer content than the first to show that equal
-                  height action.</p>
+              <p class="card-text chhotafont text-justify">We encourage and motivate students in applications of science and
+                its interface with society.</p>
           </div>
       </div>
     </div>
@@ -73,7 +74,7 @@
 <!-- About Us -->
 <div class="container-fluid my-3 bg-grey py-2">
   <div class="container">
-      <h1 class="text-primary font-weight-bold text-center">About Us</h1><br>
+      <h1 class="text-blue font-weight-bold text-center">About Us</h1><br>
       <p class="chhotafont2 text-justify ">The Science Forum guides and helps students form a staunch scientific outlook,
          exemplifying the need of the hour– to defeat curiosity and feed knowledge to the mind. We,
           at Science Forum, organise lectures and demonstrations by renowned scientists
@@ -89,21 +90,21 @@
 </div>
 
 <!-- Activities -->
-<h1 class="font-weight-bold text-primary text-center">Activities</h1>
+<h1 class="font-weight-bold text-blue text-center">Activities</h1>
 <br>
 <div class="container-fluid px-lg-5">
     <div class="card-deck">
         <div class="card text-center lshadow">
             <div class="card-body">
-                <h5 class="card-title text-primary font-weight-bold">Discussions</h5>
+                <h5 class="card-title text-blue font-weight-bold">Discussions</h5>
                 <img src="/static/img/discussions.svg" alt="" class="img-fluid">
-                <p class="card-text chhotafont text-justify">We conduct weekly discussions on various topics from different fields of
+                <p class="card-text chhotafont text-justify mb-auto">We conduct weekly discussions on various topics from different fields of
                   science ranging from environmental science to astrophysics.</p>
             </div>
         </div>
         <div class="card text-center lshadow">
             <div class="card-body">
-                <h5 class="card-title text-primary font-weight-bold">Lectures and Webinars</h5>             
+                <h5 class="card-title text-blue font-weight-bold">Lectures and Webinars</h5>             
                  <img src="/static/img/lectures.svg" alt="" class="img-fluid">
                 <p class="card-text chhotafont text-justify">We organize lectures and webinars by eminent professors from
                   prestigious colleges in and outside Delhi.</p>
@@ -111,7 +112,7 @@
         </div>
         <div class="card text-center lshadow">
             <div class="card-body">
-                <h5 class="card-title text-primary font-weight-bold">Trips</h5>
+                <h5 class="card-title text-blue font-weight-bold">Trips</h5>
                 <img src="/static/img/trips.svg" alt="" class="img-fluid">
                 <p class="card-text chhotafont text-justify">We never miss out on the fun part of science. This includes visiting and exploring
                   scientific landmarks, museums, observatories, etc.</p>
@@ -119,7 +120,7 @@
         </div>
         <div class="card text-center lshadow">
           <div class="card-body">
-              <h5 class="card-title text-primary font-weight-bold">Competitions</h5>
+              <h5 class="card-title text-blue font-weight-bold">Competitions</h5>
               <img src="/static/img/competitions.svg" alt="" class="img-fluid">
               <p class="card-text chhotafont text-justify">We organize competitions to help our members enhance their creativity
                 and intellect.</p>
