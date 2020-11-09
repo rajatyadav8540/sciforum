@@ -42,3 +42,8 @@ class testlink(models.Model):
 
     def __str__(self):
         return self.name_of_test
+
+
+class gallery(models.Model):
+
+     Image=models.ImageField(upload_to="img/gallery",default="")

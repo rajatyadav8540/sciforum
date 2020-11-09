@@ -12,8 +12,14 @@
            <div class="card lshadow"> 
             <img class="card-img-top w-100" src="/media/{{Scientist.Scientist_thumbnail}}">
             <div class="card-body">
-                <h6 class="card-head font-weight-bold text-blue"><a href="/ScientistProfile/{{Scientist.Scientist_title}}" class="stretched-link text-decoration-none">{{Scientist.Scientist_title|upper}}</a></h6>
-                <small class="card-text chhotafont text-muted">{{Scientist.Scientist_content|truncatewords:10|safe}}.</small>
+                <div class="half-height">
+
+                    <h6 class="card-head font-weight-bold text-blue"><a href="/ScientistProfile/{{Scientist.Scientist_title}}" class="stretched-link text-decoration-none">{{Scientist.Scientist_title|upper}}</a></h6>
+                </div>
+                <div class="height2">
+
+                    <small class="card-text text-muted">{{Scientist.Scientist_content|truncatewords:10|safe}}.</small>
+                </div>
             </div>
             </div>
         </div>

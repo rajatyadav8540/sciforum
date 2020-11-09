@@ -24,13 +24,6 @@ body{
     border: 1px solid black;
     box-shadow: 3px 3px 10px  rgba(0, 0, 0, 0.2), -3px -3px 10px  rgba(0, 0, 0, 0.2);
 }
-#adshort{
-    height: 400px;
-    width: 400px;
-    position: fixed;
-    right: 0;
-    bottom: 500px;
-}
 
 .chhotafont{
     font-size: 16px;
@@ -86,7 +79,7 @@ body{
         bottom: 0;
         right: 0;
         /* border: 5px solid blue; */
-        border-radius: 20px;
+        /* border-radius: 20px; */
     }
 
 }

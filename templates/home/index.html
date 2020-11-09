@@ -129,20 +129,20 @@
     </div>
 </div>
 
-<!-- <h1 class="text-center font-weight-bold">Gallery</h1>
+<h1 class="text-center font-weight-bold">Gallery</h1>
 
 
 <div class="swiper-container">
 
 <div class="swiper-wrapper">
 
-  <div class="swiper-slide" style="background-color:black; height:500px"></div>
+  <div class="swiper-slide" style="background-image:url({% static 'img/logo.png'%});"><img src="" alt="" class="img-fluid"></div>
   <div class="swiper-slide" style="background-color:blue; height:500px;"></div>
   <div class="swiper-slide" style="background-color:red;height:500px;"></div>
   <div class="swiper-slide" style="background-color:yellow; height:500px;"></div>
   <div class="swiper-slide" style="background-color:green; height:500px;"></div>
   
-</div> -->
+</div>
 <!-- Add Pagination 
 <div class="swiper-pagination"></div> -->
 
@@ -157,13 +157,13 @@
 </div>
 
 <div class="testlink bg-light card">
-  <div class="card-header "><button class="btn btn-block dropdown-toggle btn-primary" data-toggle="collapse" data-target="#test">Take A Quiz</button></div>
-  <div class="" id="test">
+  <div class="card-header p-0"><button class="btn btn-block dropdown-toggle bg-blue " data-toggle="collapse" data-target="#test">Take A Quiz</button></div>
+  <div class="collapse" id="test">
       <ul class="list-group">
       {%for test in tests%}
           <li class="striped list-group-item">
-            <h4>{{test.name_of_test}}</h4>
-            <a href="{{test.link_of_test}}" class="">Click here for test</a>
+            <p class="text-blue font-weight-bold my-0">{{test.name_of_test}}</p>
+            <a href="{{test.link_of_test}}" class="chhotafont my-0">Click here for test</a>
           </li>
       {%endfor%}
       </ul>
@@ -192,14 +192,14 @@
     effect: 'coverflow',
     grabCursor: true,
     centeredSlides: true,
-    slidesPerView: 'auto',
+    slidesPerView: '3',
     coverflowEffect: {
       rotate: 50,
       stretch: 0,
       depth: 100,
       modifier: 1,
       mousewheel: true,
-      loop: true,
+      loop: false,
       slideShadows: true,
     },
     pagination: {
