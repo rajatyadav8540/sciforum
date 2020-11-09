@@ -25,7 +25,7 @@ SECRET_KEY = '0kgjk2!_b4_e0buun#g7*-_u53sqacv&#o(8j)m)f3!5n)=y8c'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -58,7 +58,7 @@ ROOT_URLCONF = 'sciforum.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -126,10 +126,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
- 
-]
+STATICFILES_DIRS = [os.path.join(BASE_DIR,'static/')]
+STATIC_ROOT=os.path.join(BASE_DIR,'assets') 
+
 
 
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
