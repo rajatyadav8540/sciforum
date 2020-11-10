@@ -48,7 +48,7 @@ body{
 }
 
 .bg-blue{
-    background-color: #33adff;
+    background-color: #3366cc;
 }
 .text-blue{
     color: #3366cc;
@@ -57,8 +57,19 @@ body{
 .bg-yellow{
     background-color: #ffcc00;
 }
+.font-yellow{
+    color: #ffcc00;
+}
 .varfont{
     font-size: 35px;
+}
+.testlink{
+        
+    width: 200px;
+    position: fixed;
+    z-index: 1000;
+    bottom: 0;
+    right: 0;
 }
 @media (max-width: 395px) {
     nav > div > .logo{

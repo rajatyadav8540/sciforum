@@ -10,15 +10,11 @@ class event(models.Model):
     venue=models.CharField(max_length=50,default="",null=True)
     event_description=models.TextField(max_length=200,default="")
     event_content= RichTextField(max_length=2000,default="")
+    event_image1=models.ImageField(upload_to='img/eventimages',default="/static/img/logo.png")
+    event_image2=models.ImageField(upload_to='img/eventimages',default="/static/img/logo.png")
+    event_image3=models.ImageField(upload_to='img/eventimages',default="/static/img/logo.png")
 
     def __str__(self):
         return self.event_name
   
 
-class eventgallery(models.Model):
-
-        event_image=models.ImageField(upload_to='img/eventimages',default="/static/img/logo.png")
-        event_name=models.ForeignKey(event,on_delete=models.CASCADE)
-
-        def __str__(self):
-            return self.event_name

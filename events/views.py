@@ -1,13 +1,12 @@
 from django.shortcuts import render
-from .models import event,eventgallery
+from .models import event
 
 # Create your views here.
 def index(request):
     eventname=event.objects.all()
-    eventimages=eventgallery.objects.all()
     context={
-             'events':eventname,
-             'gals':eventimages
+             'events':eventname
+            
     }
     return render(request,'events/eventlist.html',context)
  
