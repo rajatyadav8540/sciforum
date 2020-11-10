@@ -57,7 +57,9 @@ body{
 .bg-yellow{
     background-color: #ffcc00;
 }
-
+.varfont{
+    font-size: 35px;
+}
 @media (max-width: 395px) {
     nav > div > .logo{
       display: hidden;
@@ -80,6 +82,10 @@ body{
         right: 0;
         /* border: 5px solid blue; */
         /* border-radius: 20px; */
+    }
+
+    .varfont{
+        font-size: 75px;
     }
 
 }
