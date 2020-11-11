@@ -71,6 +71,11 @@ body{
     bottom: 0;
     right: 0;
 }
+
+.logo{
+    height: 40px;
+    width: 30px;
+}
 @media (max-width: 395px) {
     nav > div > .logo{
       display: hidden;
@@ -97,6 +102,11 @@ body{
 
     .varfont{
         font-size: 75px;
+    }
+
+    .logo{
+        height: 50px;
+        width: 70px;
     }
 
 }
