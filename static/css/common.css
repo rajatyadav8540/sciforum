@@ -62,6 +62,7 @@ body{
 }
 .varfont{
     font-size: 26px;
+    font-family: Georgia, Times, "Times New Roman", serif;
 }
 .testlink{
         
@@ -74,20 +75,49 @@ body{
 
 .logo{
     height: 40px;
-    width: 30px;
-}
-@media (max-width: 395px) {
-    nav > div > .logo{
-      display: hidden;
-    }
-}
-@media (min-width: 395px) and (max-width: 991px) {
-    nav > div > .but{
-      float: right;
-    }
+    width: 40px;
 }
 
-@media screen and (min-width: 480px) {
+.chomfont{
+    font-family: 'ChomskyRegular';
+    font-weight: normal;
+    font-style: normal;
+}
+
+.titlesize{
+    font-size: 25px;
+}
+
+@media screen and (min-width: 576px) {
+
+    .testlink{
+        
+        width: 200px;
+        position: fixed;
+        z-index: 1000;
+        bottom: 0;
+        right: 0;
+        /* border: 5px solid blue; */
+        /* border-radius: 20px; */
+    }
+
+    .varfont{
+        font-size: 45px;
+        font-family: Georgia, Times, "Times New Roman", serif;
+    }
+
+    .logo{
+        height: 50px;
+        width: 70px;
+    }
+    .titlesize{
+        font-size: 35px;
+    }
+    
+
+}
+/* for desktop   */
+@media screen and (min-width: 992px) {
 
     .testlink{
         
@@ -102,11 +132,15 @@ body{
 
     .varfont{
         font-size: 75px;
+        font-family: Georgia, Times, "Times New Roman", serif;
     }
 
     .logo{
         height: 50px;
         width: 70px;
     }
-
+    .titlesize{
+        font-size: 40px;
+    }
+    
 }
