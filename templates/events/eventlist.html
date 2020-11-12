@@ -37,10 +37,10 @@ year.
 <div class="container">
     {%for event in events%}
         {% if forloop.counter|divisibleby:2 %}
-        <div class="row card " id="{{event.event_name}}">
+        <div class="row card " >
             
             <div class="card-body">
-               <div class="row ">
+               <div class="row " id="{{event.event_name}}">
                 <div class="col-sm-6">
                     
                     <a href="#demo{{event.id}}"  data-toggle="collapse" class="text-primary text-decoration-none mb-0 stretched-link h1 font-weight-bold">{{event.event_name}}</a>
@@ -50,7 +50,7 @@ year.
                      <p class="">{{event.event_description}}</p>
                     
                 </div>
-                <div class="col-sm-6  px-5">
+                <div class="col-sm-6  px-5" >
                     <div id="carouselId" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
                             <li data-target="#carouselId" data-slide-to="0" class="active"></li>
@@ -85,11 +85,11 @@ year.
             </div>
         </div>
         {% else %}
-        <div class="row card my-2 " id="{{event.event_name}}">
+        <div class="row card my-2 " >
             
             <div class="card-body">
                <div class="row ">
-                <div class="col-sm-6 ">
+                <div class="col-sm-6 " id="{{event.event_name}}">
                     <div id="carouselId" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
                             <li data-target="#carouselId" data-slide-to="0" class="active"></li>
@@ -137,4 +137,24 @@ year.
         {% endif%}
     {%endfor%}
 </div>
+
+<script>
+    // The function actually applying the offset
+function offsetAnchor() {
+    if (location.hash.length !== 0) {
+        window.scrollTo(window.scrollX, window.scrollY - 300);
+    }
+}
+
+// This will capture hash changes while on the page
+$(window).on("hashchange", function () {
+    offsetAnchor();
+});
+
+// Let the page finish loading.
+$(document).ready(function() {
+    offsetAnchor();
+});
+</script>
+
 {%endblock%}
