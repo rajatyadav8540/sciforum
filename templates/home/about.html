@@ -19,8 +19,8 @@ Science Forum exhibits an expansive array of opportunities for students to explo
 </div>
  <br>
 <div class="container">
-    <div class="row text-center mx-auto ">
-        <div class="card-deck">
+    <div class="row text-center mx-lg-5 ">
+        <div class="card-deck mx-lg-5">
             <div class="card lshadow">
                 <div class="height4 overflow-hidden"> 
                     <img class="card-img-top" src="/media/{{profiles.0.Profile_thumbnail}}" alt="Card image cap">
@@ -32,7 +32,7 @@ Science Forum exhibits an expansive array of opportunities for students to explo
                 </div>
                 <div class="card-footer">
                     
-                    <a href="{{profiles.0.Profile_contact}}" class="btn btn-primary">Contact Email</a>
+                    <a href="mailto:{{profiles.0.Profile_email}}" class="btn btn-primary">Contact Email</a>
                     </div>
             </div>
             <div class="card lshadow">
@@ -45,14 +45,14 @@ Science Forum exhibits an expansive array of opportunities for students to explo
                     <p class="card-text chhotafont">{{profiles.1.Profile_content}}</p>
                 </div>
                 <div class="card-footer">
-                    <a href="{{profiles.1.Profile_contact}}" class="btn btn-primary">Contact Email</a>
+                    <a href="mailto:{{profiles.1.Profile_email}}" class="btn btn-primary">Contact Email</a>
 
                     </div>
             </div>
         </div>
 
         <div class="row d-flex">
-        {%for profile in profiles%}
+        {%for profile in profiles|slice:"2:"%}
           <div class="col-lg-3 col-md-2 my-2">
 
               <div class="card lshadow height5" style="">

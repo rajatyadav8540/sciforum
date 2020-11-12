@@ -1,0 +1,146 @@
+/* html *
+{
+  
+   color: #000 !important;
+   font-family: Arial !important;
+} */
+
+body{
+    font-family: Arial;
+}
+
+.h-500{
+    height:500px;
+}
+.gap{
+    height: 80px;
+}
+    
+.HBod{
+    margin:3px;
+    width: 18rem;
+}
+.HBod:hover{
+    border: 1px solid black;
+    box-shadow: 3px 3px 10px  rgba(0, 0, 0, 0.2), -3px -3px 10px  rgba(0, 0, 0, 0.2);
+}
+
+.chhotafont{
+    font-size: 16px;
+}
+
+.chhotafont2{
+    font-size: 17px;
+}
+.chhotafont3{
+    font-size: 17px;
+}
+
+.hshadow:hover{
+    box-shadow: 2px 2px 20px rgb(78, 77, 77),-2px -2px 20px rgb(78, 77, 77);
+}
+
+.lshadow:hover{
+    box-shadow: 2px 2px 20px rgb(146, 144, 144),-2px -2px 20px rgb(146, 144, 144);
+}
+.bg-grey{
+    background-color: rgba(216, 216, 216, 1);
+}
+
+.bg-blue{
+    background-color: #3366cc;
+}
+.text-blue{
+    color: #3366cc;
+}
+
+.bg-yellow{
+    background-color: #ffcc00;
+}
+.font-yellow{
+    color: #ffcc00;
+}
+.varfont{
+    font-size: 26px;
+    font-family: Georgia, Times, "Times New Roman", serif;
+}
+.testlink{
+        
+    width: 200px;
+    position: fixed;
+    z-index: 1000;
+    bottom: 0;
+    right: 0;
+}
+
+.logo{
+    height: 40px;
+    width: 40px;
+}
+
+.chomfont{
+    font-family: 'ChomskyRegular';
+    font-weight: normal;
+    font-style: normal;
+}
+
+.titlesize{
+    font-size: 25px;
+}
+
+@media screen and (min-width: 576px) {
+
+    .testlink{
+        
+        width: 200px;
+        position: fixed;
+        z-index: 1000;
+        bottom: 0;
+        right: 0;
+        /* border: 5px solid blue; */
+        /* border-radius: 20px; */
+    }
+
+    .varfont{
+        font-size: 45px;
+        font-family: Georgia, Times, "Times New Roman", serif;
+    }
+
+    .logo{
+        height: 50px;
+        width: 70px;
+    }
+    .titlesize{
+        font-size: 35px;
+    }
+    
+
+}
+/* for desktop   */
+@media screen and (min-width: 992px) {
+
+    .testlink{
+        
+        width: 200px;
+        position: fixed;
+        z-index: 1000;
+        bottom: 0;
+        right: 0;
+        /* border: 5px solid blue; */
+        /* border-radius: 20px; */
+    }
+
+    .varfont{
+        font-size: 75px;
+        font-family: Georgia, Times, "Times New Roman", serif;
+    }
+
+    .logo{
+        height: 50px;
+        width: 70px;
+    }
+    .titlesize{
+        font-size: 40px;
+    }
+    
+}

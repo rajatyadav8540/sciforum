@@ -21,11 +21,20 @@
 }
 .dropdown-menu{
   border: none;
-  background: rgba(255,255,255,.8); 
+  background: #ffcc00; 
 }
 .dropdown:hover .dropdown-menu{
         display: block;
+        
     }
+  .dropdown-item{
+    border: 1px dotted white;
+  }
+.dropdown-item:hover{
+  background: #3366cc;
+  color: white;
+}
+
 </style>
 <nav class="navbar navbar-expand-lg navbar-light  font-weight-bold uppercase  fixed-top bg-yellow " id="navBar">
     <div class="container">
@@ -49,14 +58,12 @@
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Events
         </a>
-        <div class="dropdown-menu shadow " aria-labelledby="navbarDropdown">
-          <a class="dropdown-item " href="#">1st Event</a>
-          <a class="dropdown-item " href="#">2st Event</a>
-          <a class="dropdown-item " href="#">3st Event</a>
-          <a class="dropdown-item " href="#">4nd Event</a>
-          <a class="dropdown-item " href="#">5nd Event</a>
-          <a class="dropdown-item " href="#">6nd Event</a>
-          <div class="dropdown-divider "></div>
+        <div class="dropdown-menu shadow bg-yellow" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item bg-yellow" href="/events/#Webinars">Webinars</a>
+          <a class="dropdown-item " href="/events/#Trips">Trips</a>
+          <a class="dropdown-item " href="/events/#Lectures">Lectures</a>
+          <a class="dropdown-item " href="/events/Group Discussions">Group Discussions</a>
+          <a class="dropdown-item " href="/events/#Scientia - The Annual Festival">Scientia</a>
           <a class="dropdown-item " href="/events/">More...</a>
         </div>
       </li>
