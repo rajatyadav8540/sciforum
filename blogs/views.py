@@ -7,7 +7,7 @@ from django.core.paginator import Paginator,EmptyPage
 # Create your views here.
 def bloglist(request):
     bloglist=blogpost.objects.all()
-    p=Paginator(bloglist[::-1],7)
+    p=Paginator(bloglist[::-1],8)
 
     page_num=request.GET.get('page',1)
     tpage=p.num_pages

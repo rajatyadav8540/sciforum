@@ -5,18 +5,34 @@
 <!-- {{blists}} -->
 <div class="container mt-5 ">
     <div class="row  ">
-        <div class="col-md-12 my-2 px-lg-5">
-            <div class="card border hshadow mx-lg-5 " style="">
-                <div class="height5 overflow-hidden">
+        <div class="col-lg-6 my-2">
+            <div class="card border hshadow  " style="">
+                <div class="height4 overflow-hidden">
 
                     <img class="img-fluid  w-100" src="/media/{{blists.0.thumbnail}}" alt="Card image">
                 </div>
-                <div class="card-body border height2 overflow-hidden">
-                    <a href="/blogs/blogpost/{{blists.0.blog_title}}" class="text-decoration-none stretched-link"> <h4 class="card-title font-weight-bold text-blue">{{blists.0.blog_title|upper}}</h4></a>
+                <div class="card-body border height1 overflow-hidden">
+                    <a href="/blogs/blogpost/{{blists.0.blog_title}}" class="text-decoration-none stretched-link georgfont"> <h4 class="card-title font-weight-bold text-blue">{{blists.0.blog_title|upper}}</h4></a>
                   <small class="card-text text-muted lh">{{blists.0.blog_content|truncatewords:20|safe }}</small>
                 </div>
                 <div class="card-footer py-0 overflow-hidden mb-0" style="height:40px;">
                     <p class="my-0 "> {{blists.0.blog_writer}}|<small class="text-muted">{{blists.0.blog_date}}</small> </p>
+             </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 my-2">
+            <div class="card border hshadow  " style="">
+                <div class="height4 overflow-hidden">
+
+                    <img class="img-fluid  w-100" src="/media/{{blists.1.thumbnail}}" alt="Card image">
+                </div>
+                <div class="card-body border height1 overflow-hidden">
+                    <a href="/blogs/blogpost/{{blists.1.blog_title}}" class="text-decoration-none stretched-link georgfont"> <h4 class="card-title font-weight-bold text-blue">{{blists.1.blog_title|upper}}</h4></a>
+                  <small class="card-text text-muted lh">{{blists.1.blog_content|truncatewords:20|safe }}</small>
+                </div>
+                <div class="card-footer py-0 overflow-hidden mb-0" style="height:40px;">
+                    <p class="my-0 "> {{blists.1.blog_writer}}|<small class="text-muted">{{blists.1.blog_date}}</small> </p>
              </div>
             </div>
         </div>
