@@ -96,6 +96,19 @@ body{
     font-family: Georgia, Times, "Times New Roman", serif;
 }
 
+.content{
+    
+}
+
+.content p{
+    line-height: 20px;
+    /* /* margin-top: 10px; */
+   padding-bottom: 0px;
+   padding-top: 0px;
+    text-align: justify;
+    
+}
+
 @media screen and (min-width: 576px) {
 
     .testlink{

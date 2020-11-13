@@ -14,12 +14,12 @@
                 <div class="row border shadow">
                     <div class="container ">
 
-                        <h1 class="">{{posts.blog_title}}</h1>
+                        <h1 class="text-blue font-weight-bold georgfont">{{posts.blog_title}}</h1>
                         <p class="">/By-{{posts.blog_writer}} on <small>{{posts.blog_date}}</small></p>
                         <div class="img-height"> 
                             <img src="/media/{{posts.thumbnail}}" alt="" class="img-fluid h-100 text-center">
                         </div>
-                        <p class="text-justify " style=";">{{posts.blog_content|safe}}</p>
+                        <div class="content my-2 georgfont">{{posts.blog_content|safe}}</div>
                     
                     </div>
                 </div>
