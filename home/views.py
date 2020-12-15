@@ -9,7 +9,7 @@ def index(request):
     return render(request,'home/index.html',{'ads':ads,'tests':test,'gals':gall})
  
 def about(request):
-    profileDetails=TeamProfile.objects.all()
+    profileDetails=TeamProfile.objects.order_by('priority')
     context={
              'profiles':profileDetails
     }
@@ -29,4 +29,4 @@ def ScientistProfile(request,name):
              'ScientistProf':ScientistDet[0],
              'Scientists':ScientistDetails
     }
-    return render(request,'home/ScientistProfile.html',context)
+    return render(request,'home/ScientistProfile.html',context) 

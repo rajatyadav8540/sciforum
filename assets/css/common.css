@@ -36,6 +36,10 @@ body{
     font-size: 17px;
 }
 
+.hshadow{
+    box-shadow: 1px 1px 5px rgb(149, 149, 149),-1px -1px 5px rgb(149, 149, 149);
+}
+
 .hshadow:hover{
     box-shadow: 2px 2px 20px rgb(78, 77, 77),-2px -2px 20px rgb(78, 77, 77);
 }
@@ -62,7 +66,6 @@ body{
 }
 .varfont{
     font-size: 26px;
-    font-family: Georgia, Times, "Times New Roman", serif;
 }
 .testlink{
         
@@ -82,10 +85,44 @@ body{
     font-family: 'ChomskyRegular';
     font-weight: normal;
     font-style: normal;
+    
 }
 
 .titlesize{
     font-size: 25px;
+    letter-spacing: 0px;
+}
+
+.georgfont{
+    font-family: Georgia, Times, "Times New Roman", serif;
+}
+
+.content{
+    
+}
+
+.content p{
+    line-height: 20px;
+    /* /* margin-top: 10px; */
+   padding-bottom: 0px;
+   padding-top: 0px;
+    text-align: justify;
+    
+}
+
+.height3{
+    height: 300px;
+}
+.mavenfont{
+    font-family: 'Maven Pro', sans-serif;
+}
+
+@font-face{
+    font-family: comodo;
+    src: url(/static/Comodo\ Regular\ Free.ttf);
+}
+.comodofont{
+    font-family: comodo;
 }
 
 @media screen and (min-width: 576px) {
@@ -103,7 +140,7 @@ body{
 
     .varfont{
         font-size: 45px;
-        font-family: Georgia, Times, "Times New Roman", serif;
+        
     }
 
     .logo{
@@ -112,6 +149,13 @@ body{
     }
     .titlesize{
         font-size: 35px;
+    }
+
+    .chomfont{
+        font-family: 'ChomskyRegular';
+        font-weight: normal;
+        font-style: normal;
+        letter-spacing: 2px;
     }
     
 
@@ -132,7 +176,7 @@ body{
 
     .varfont{
         font-size: 75px;
-        font-family: Georgia, Times, "Times New Roman", serif;
+        
     }
 
     .logo{
@@ -141,6 +185,13 @@ body{
     }
     .titlesize{
         font-size: 40px;
+    }
+
+    .chomfont{
+        font-family: 'ChomskyRegular';
+        font-weight: normal;
+        font-style: normal;
+        letter-spacing: 4px;
     }
     
 }

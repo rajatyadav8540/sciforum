@@ -2,13 +2,14 @@ from django.db import models
 import datetime
 from django.utils.timezone import now
 from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 
 # Create your models here.
  
 class blogpost(models.Model):
 
     blog_title=models.CharField(max_length=100,default="")
-    blog_content=RichTextField(blank=True,null=True)
+    blog_content=RichTextUploadingField(blank=True,null=True)
     blog_writer=models.CharField(max_length=50,default="scienceforum")
     blog_date=models.DateTimeField(default=now)
     thumbnail=models.ImageField(upload_to="img/blogimg",default="img/logo.png")

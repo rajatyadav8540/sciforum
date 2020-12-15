@@ -85,11 +85,12 @@ body{
     font-family: 'ChomskyRegular';
     font-weight: normal;
     font-style: normal;
-    letter-spacing: -1px;
+    
 }
 
 .titlesize{
     font-size: 25px;
+    letter-spacing: 0px;
 }
 
 .georgfont{
