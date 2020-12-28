@@ -129,26 +129,6 @@
     </div>
 </div>
 
-<!-- <h1 class="text-center font-weight-bold">Gallery</h1>
-
-
-<div class="swiper-container">
-
-<div class="swiper-wrapper">
-
-  <div class="swiper-slide" style="background-image:url({% static 'img/logo.png'%});"><img src="" alt="" class="img-fluid"></div>
-  <div class="swiper-slide" style="background-color:blue; height:500px;"></div>
-  <div class="swiper-slide" style="background-color:red;height:500px;"></div>
-  <div class="swiper-slide" style="background-color:yellow; height:500px;"></div>
-  <div class="swiper-slide" style="background-color:green; height:500px;"></div>
-  
-</div> Add Pagination 
-<div class="swiper-pagination"></div> -->
-
-<!-- Add Arrows -->
-<!-- <div class="swiper-button-prev"></div>
-<div class="swiper-button-next" id="btn-next"></div>
-</div> --> 
 
 
 
@@ -174,43 +154,8 @@
   </script>
 {%endif%}
 
-<!-- <script>
-  $(".minimize").click(function(){
-    $("#adshort").css({"height":"400px","width":"400px","position":"sticky","top":"80px","right":"0px"});
 
-  });
-</script> -->
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
-
-<script>
-  var swiper = new Swiper('.swiper-container', {
-    effect: 'coverflow',
-    grabCursor: true,
-    centeredSlides: true,
-    slidesPerView: '3',
-    coverflowEffect: {
-      rotate: 50,
-      stretch: 0,
-      depth: 100,
-      modifier: 1,
-      mousewheel: true,
-      loop: false,
-      slideShadows: true,
-    },
-    pagination: {
-      el: '.swiper-pagination',
-    },
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-  });
-
-  setInterval(function(){
-    	document.getElementById('btn-next').click();
-       },2000);
-</script>
+  
 
 
 {%endblock%}

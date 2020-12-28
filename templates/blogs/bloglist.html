@@ -2,7 +2,6 @@
 {%load static %}
 {%block title%}Science Forum-home{%endblock%}
 {%block content%}
-<!-- {{blists}} -->
 <div class="container mt-5 ">
     <div class="row  ">
         <div class="col-lg-6 my-2">
@@ -71,7 +70,6 @@
            <i class="fas fa-angle-double-left"></i>prev</a></li>
        {%endif%}
        <li class="page-item"><a href="?page=1" class="page-link">1</a></li>...
-       <!-- ..<li class="page-item"><a href="?page={{blists.page_number}}" class="page-link">{{tpage}}</a></li>.. -->
        <li class="page-item"><a href="?page={{tpage}}" class="page-link">{{tpage}}</a></li>
        {% if blists.has_next%}
        <li class="page-item"><a href="?page={{blists.next_page_number}}" class="page-link">
@@ -79,16 +77,7 @@
        {%endif %}
     </ul>
 </div>
-<!-- <script>
-    $(".hshadow").hover(
-      function () {
-        $(this).addClass("shadow-lg");
-      },
-      function () {
-        $(this).removeClass("shadow-lg");
-      }
-    );
-    </script> -->
+
 
 {%endblock%}
 
